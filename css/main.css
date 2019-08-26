@@ -1529,7 +1529,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d1ffff;
+  background: #ff6799;
 }
 .feed-link,
 .chat {
@@ -2285,21 +2285,6 @@ embed {
 @media (min-width: 992px) {
   .menu .menu-item .fa {
     width: 100%;
-  }
-}
-.sidebar {
-  right: auto;
-  left: 0;
-}
-.sidebar-toggle,
-.back-to-top {
-  right: auto;
-  left: 30px;
-}
-@media (max-width: 991px) {
-  .sidebar-toggle,
-  .back-to-top {
-    left: 20px;
   }
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
