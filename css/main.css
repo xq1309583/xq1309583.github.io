@@ -1,5 +1,13 @@
 body {
   background: url("/images/bg.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
 }
 border-radius: 50% {
   border-radius: 50%;
@@ -1567,7 +1575,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #faf54b;
+  background: #0485e4;
 }
 .feed-link,
 .chat {
