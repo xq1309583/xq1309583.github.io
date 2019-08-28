@@ -1,3 +1,6 @@
+body {
+  background: url("/images/bg.png");
+}
 border-radius: 50% {
   border-radius: 50%;
 }
@@ -1564,7 +1567,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffed6c;
+  background: #fff2ed;
 }
 .feed-link,
 .chat {
@@ -2607,7 +2610,4 @@ ul.breadcrumb li+li:last-child {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-body {
-  background: url("/images/bg.png");
 }
