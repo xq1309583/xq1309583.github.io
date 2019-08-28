@@ -1,5 +1,5 @@
 body {
-  background: url("/pics/bg.jpg");
+  background: url("/images/bg.jpg");
 }
 border-radius: 50% {
   border-radius: 50%;
@@ -1567,7 +1567,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #182e30;
+  background: #178fd0;
 }
 .feed-link,
 .chat {
