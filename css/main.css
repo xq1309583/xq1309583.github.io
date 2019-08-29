@@ -1564,7 +1564,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff09ff;
+  background: #2a04ff;
 }
 .feed-link,
 .chat {
@@ -2627,4 +2627,7 @@ body {
 }
 .header-inner {
   background: rgba(255,255,255,0.9);
+}
+.sub-menu {
+  background: rgba(255,255,255,0.9) !important;
 }
