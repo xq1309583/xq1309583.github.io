@@ -59,19 +59,19 @@
   };
 </script>
 
-  <meta name="description" content="大部分修改都可以在官方文档中找到修改方法，这里就写一些我找不到的。同时我利用了该主题的特性将所有的修改都放在hexo的目录中，可以方便的更新主题。 更新主题如果修改了主题目录中source文件夹内容，比如icon，更新后会变成默认的，还有自行修改的css也是。为了方便配置文件的管理，这里NEXT文档给出了一些解决办法，可以将所有你修改的文件都放在hexo的source目录中而不是主题的目录中。首先">
-<meta name="keywords" content="HEXO,NEXT">
+  <meta name="description" content="理论本人手里恰好有一张Mifare S70卡，作为测试用。 Mifare S70卡阅读手册可知该卡可存储4K的数据，共40个扇区。扇区结构基本上相同。由于这里只用到了前16个扇区，其他扇区不做深究。这几个扇区每个扇区分为4个块，每个块可存储16字节数据。其中0扇区（第一个扇区）的第0块（第一个块）为工厂设置，里面的数据无法修改（有的可以写，那种卡……）。块有两种用法，数据块（随便写数据）和值块（按">
+<meta name="keywords" content="Mifare,破解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NEXT主题踩过的坑">
-<meta property="og:url" content="http://xq1309583.github.io/2019/08/15/NEXT主题踩过的坑/index.html">
+<meta property="og:title" content="Mifare S70卡安全测试">
+<meta property="og:url" content="http://xq1309583.github.io/2019/08/15/Mifare S70卡安全测试/index.html">
 <meta property="og:site_name" content="Qing">
-<meta property="og:description" content="大部分修改都可以在官方文档中找到修改方法，这里就写一些我找不到的。同时我利用了该主题的特性将所有的修改都放在hexo的目录中，可以方便的更新主题。 更新主题如果修改了主题目录中source文件夹内容，比如icon，更新后会变成默认的，还有自行修改的css也是。为了方便配置文件的管理，这里NEXT文档给出了一些解决办法，可以将所有你修改的文件都放在hexo的source目录中而不是主题的目录中。首先">
+<meta property="og:description" content="理论本人手里恰好有一张Mifare S70卡，作为测试用。 Mifare S70卡阅读手册可知该卡可存储4K的数据，共40个扇区。扇区结构基本上相同。由于这里只用到了前16个扇区，其他扇区不做深究。这几个扇区每个扇区分为4个块，每个块可存储16字节数据。其中0扇区（第一个扇区）的第0块（第一个块）为工厂设置，里面的数据无法修改（有的可以写，那种卡……）。块有两种用法，数据块（随便写数据）和值块（按">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-30T07:06:07.593Z">
+<meta property="og:updated_time" content="2019-08-30T09:21:33.939Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NEXT主题踩过的坑">
-<meta name="twitter:description" content="大部分修改都可以在官方文档中找到修改方法，这里就写一些我找不到的。同时我利用了该主题的特性将所有的修改都放在hexo的目录中，可以方便的更新主题。 更新主题如果修改了主题目录中source文件夹内容，比如icon，更新后会变成默认的，还有自行修改的css也是。为了方便配置文件的管理，这里NEXT文档给出了一些解决办法，可以将所有你修改的文件都放在hexo的source目录中而不是主题的目录中。首先">
-  <link rel="canonical" href="http://xq1309583.github.io/2019/08/15/NEXT主题踩过的坑/">
+<meta name="twitter:title" content="Mifare S70卡安全测试">
+<meta name="twitter:description" content="理论本人手里恰好有一张Mifare S70卡，作为测试用。 Mifare S70卡阅读手册可知该卡可存储4K的数据，共40个扇区。扇区结构基本上相同。由于这里只用到了前16个扇区，其他扇区不做深究。这几个扇区每个扇区分为4个块，每个块可存储16字节数据。其中0扇区（第一个扇区）的第0块（第一个块）为工厂设置，里面的数据无法修改（有的可以写，那种卡……）。块有两种用法，数据块（随便写数据）和值块（按">
+  <link rel="canonical" href="http://xq1309583.github.io/2019/08/15/Mifare S70卡安全测试/">
 
 
 <script id="page.configurations">
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title>NEXT主题踩过的坑 | Qing</title>
+  <title>Mifare S70卡安全测试 | Qing</title>
   
 
 
@@ -241,7 +241,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xq1309583.github.io/2019/08/15/NEXT主题踩过的坑/">
+    <link itemprop="mainEntityOfPage" href="http://xq1309583.github.io/2019/08/15/Mifare S70卡安全测试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="罗晰青Amethyst">
@@ -255,7 +255,7 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">NEXT主题踩过的坑
+          <h1 class="post-title" itemprop="name headline">Mifare S70卡安全测试
 
               
             
@@ -288,7 +288,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-30 15:06:07" itemprop="dateModified" datetime="2019-08-30T15:06:07+08:00">2019-08-30</time>
+                <time title="修改时间：2019-08-30 17:21:33" itemprop="dateModified" datetime="2019-08-30T17:21:33+08:00">2019-08-30</time>
               </span>
             
           
@@ -319,23 +319,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>大部分修改都可以在<a href="https://theme-next.org/docs/" target="_blank" rel="noopener">官方文档</a>中找到修改方法，这里就写一些我找不到的。同时我利用了该主题的特性将所有的修改都放在hexo的目录中，可以方便的更新主题。</p>
-<h2 id="更新主题"><a href="#更新主题" class="headerlink" title="更新主题"></a>更新主题</h2><p>如果修改了主题目录中source文件夹内容，比如icon，更新后会变成默认的，还有自行修改的css也是。为了方便配置文件的管理，这里NEXT文档给出了一些解决办法，可以将所有你修改的文件都放在hexo的source目录中而不是主题的目录中。首先将主题的配置文件<code>hexo/themes/next/_config.yml</code>移到hexo的<code>hexo/source/_data/</code>目录中，然后将主题配置文件重命名为next.yml。</p>
-<h2 id="自定义样式"><a href="#自定义样式" class="headerlink" title="自定义样式"></a>自定义样式</h2><h3 id="背景图片"><a href="#背景图片" class="headerlink" title="背景图片"></a>背景图片</h3><p>我想加个背景图片，于是上网查找资料，发现都是旧版本的配置方法，那时溜了一个custom文件专门放个人修改的css，现在更新7.3已经没有那个目录了，被放到了别的地方。打开next.yml文件可以看到</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">custom_file_path:</span><br><span class="line">  #head: source/_data/head.swig</span><br><span class="line">  #header: source/_data/header.swig</span><br><span class="line">  #sidebar: source/_data/sidebar.swig</span><br><span class="line">  #postMeta: source/_data/post-meta.swig</span><br><span class="line">  #postBodyEnd: source/_data/post-body-end.swig</span><br><span class="line">  #footer: source/_data/footer.swig</span><br><span class="line">  #bodyEnd: source/_data/body-end.swig</span><br><span class="line">  #variable: source/_data/variables.styl</span><br><span class="line">  #mixin: source/_data/mixins.styl</span><br><span class="line">  #style: source/_data/styles.styl</span><br></pre></td></tr></table></figure>
-
-<p>前几个swig文件先不管，后面三个sytl文件八成就对应旧的custom文件了，于是一个一个进行测试。修改后发现variable文件的内容会被放在main.css的最开始的地方，style内容会放在最后的地方。由于css是位置越靠后权重越大（也可以用!important更改权重），所以修改style文件最方便。</p>
-<p>将style前面的警号去掉，并在对应的文件夹<code>hexo/source/_data/</code>里新建对应的空白文件。然后将背景图片的css样式贴进去就行，图片就放在hexo/source/images/里就可以，名字按下面的就叫bg.jpg，自己起名也可以。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123; </span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">url</span>(/images/bg.jpg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<div class="note info">
-            <p>hexo目录中和主题目录中的source文件夹的内容在编译的时候都会放在一起，并且主题目录中的权重高，如果重名，主题目录的文件会覆盖hexo目录的文件。举个例子来说，这里<a href="https://theme-next.org/docs/getting-started/#Configuring-Favicon" target="_blank" rel="noopener">官方建议的修改icon的方法</a>是将icon文件直接放到<code>hexo/source</code>目录里，对应到站点就是根目录。</p>
-          </div>
-
-<h3 id="音乐播放器（其他修改）"><a href="#音乐播放器（其他修改）" class="headerlink" title="音乐播放器（其他修改）"></a>音乐播放器（其他修改）</h3><p>这里就是修改之前的几个swig文件，对应的就是名字所在的的部分。这里用网易云音乐播放器举例。</p>
-<p>我想把音乐播放器放在侧边栏（sidebar），就把网易云音乐生成的播放器代码放在<code>source/_data/sidebar.swig</code>文件里，同时将配置文件对应的#去掉。网易云音乐播放器代码可在播放界面生成。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"music163player"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">298</span> <span class="attr">height</span>=<span class="string">52</span> <span class="attr">src</span>=<span class="string">"//music.163.com/outchain/player?type=2&amp;id=530693&amp;auto=0&amp;height=32"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+        <h1 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h1><p>本人手里恰好有一张Mifare S70卡，作为测试用。</p>
+<h2 id="Mifare-S70卡"><a href="#Mifare-S70卡" class="headerlink" title="Mifare S70卡"></a>Mifare S70卡</h2><p>阅读手册可知该卡可存储4K的数据，共40个扇区。扇区结构基本上相同。由于这里只用到了前16个扇区，其他扇区不做深究。这几个扇区每个扇区分为4个块，每个块可存储16字节数据。其中0扇区（第一个扇区）的第0块（第一个块）为工厂设置，里面的数据无法修改（有的可以写，那种卡……）。块有两种用法，数据块（随便写数据）和值块（按值块规定写数据，可用他给的块值加减函数直接修改）。每个扇区最后一个块是专门存Key和控制命令的。</p>
+<p>也就是说，一般的卡都是经常擦写的，获得了这个Key就等于破解了这个卡片，里面的数据可以随意改写。</p>
+<h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h2><p>普通的漏洞破解只能算出S50卡的Key，S70已经无法使用了。</p>
+<p>我有个ACR122u，Linux可以用Kali，里面集成了很多工具，安装其他的也很方便。Windows我这里找到一个叫<a href="https://github.com/xcicode/MifareOneTool" target="_blank" rel="noopener">MifareOneTool</a>的工具，当然你也可以用什么卡匠PM3之类的。这个工具提供了一个叫HardNested的攻击方式。这种攻击方式也是通过漏洞，必须已知一个Key才可以，这里以M1T作为例子。这个软件推荐用PN532模块，实际上我用ACR122u也是可以的。</p>
+<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>ACR122u插电脑上，把卡放在上面，打开那个M1T工具，检测连接和扫描卡片。然后选高级里面的HardNested，输入0扇区的Key（ffffFFFF），等着就行了。电脑CPU性能越好等的时间越短。</p>
+<h2 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h2><p>如果想实现修改数据（比如余额），算出Key只是完成了第一步，还要解密数据。现在已经很少有直接用值块存数据的了，太容易看出来了。常见的运算有位移，异或等等，可能还有校验位。</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>我这个卡采用了动态Key加全程联网验证数据，可以说是很安全了。现在CPU卡的成本也降下来了，以后可以选择更换无法破解的CPU卡。也可以使用手机模拟卡片（<a href="https://www.mifare4mobile.org/" target="_blank" rel="noopener">Mifare4Mobile</a>）。</p>
 
     </div>
 
@@ -347,15 +338,15 @@
           
         
         <div class="post-tags">
-            <a href="/tags/HEXO/" rel="tag"><i class="fa fa-tag"></i> HEXO</a>
+            <a href="/tags/Mifare/" rel="tag"><i class="fa fa-tag"></i> Mifare</a>
           
-            <a href="/tags/NEXT/" rel="tag"><i class="fa fa-tag"></i> NEXT</a>
+            <a href="/tags/破解/" rel="tag"><i class="fa fa-tag"></i> 破解</a>
           
         </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-              <a href="/2019/08/15/基于STM32的QC快充欺骗/" rel="next" title="基于STM32的QC快充欺骗">
-                <i class="fa fa-chevron-left"></i> 基于STM32的QC快充欺骗
+              <a href="/2019/08/15/GUET校园网登陆/" rel="next" title="GUET校园网登陆（DRCOM）">
+                <i class="fa fa-chevron-left"></i> GUET校园网登陆（DRCOM）
               </a>
             
           </div>
@@ -363,8 +354,8 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-              <a href="/2019/08/15/GUET校园网登陆/" rel="prev" title="GUET校园网登陆（DRCOM）">
-                GUET校园网登陆（DRCOM） <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/15/Microsoft Edge浏览器收藏夹同步/" rel="prev" title="Microsoft Edge浏览器收藏夹同步">
+                Microsoft Edge浏览器收藏夹同步 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -534,7 +525,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#更新主题"><span class="nav-number">1.</span> <span class="nav-text">更新主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义样式"><span class="nav-number">2.</span> <span class="nav-text">自定义样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景图片"><span class="nav-number">2.1.</span> <span class="nav-text">背景图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#音乐播放器（其他修改）"><span class="nav-number">2.2.</span> <span class="nav-text">音乐播放器（其他修改）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#理论"><span class="nav-number">1.</span> <span class="nav-text">理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mifare-S70卡"><span class="nav-number">1.1.</span> <span class="nav-text">Mifare S70卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试环境"><span class="nav-number">1.2.</span> <span class="nav-text">测试环境</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实践"><span class="nav-number">2.</span> <span class="nav-text">实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">2.1.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据分析"><span class="nav-number">2.2.</span> <span class="nav-text">数据分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决方法"><span class="nav-number">3.</span> <span class="nav-text">解决方法</span></a></li></ol></div>
             
 
           </div>
