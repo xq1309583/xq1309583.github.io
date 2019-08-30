@@ -59,19 +59,19 @@
   };
 </script>
 
-  <meta name="description" content="解锁Bootloader ​        现代的智能手机具备操作系统，系统在启动之前需要通过bootloader启动，手机启动的时候基带执行初始化，然后引导系统内核，直到系统启动。智能手机生产厂商通常在出厂时锁定了手机的bootloader，以防止用户误操作损坏了系统文件造成手机功能异常，部分厂商会给开发者或普通用户发放bootloader解锁码，这通常需要步骤众多的申请，锁定bootloade">
-<meta name="keywords" content="安卓,刷机">
+  <meta name="description" content="刚换博客，还没找好图床，图以后再补 现在的手机充电头大部分都支持QC快充协议和PD协议，由于PD协议涉及充电器和设备通信，暂不讨论，这里只讨论QC快充协议，而且大部分快充头（PD必须是type-c接口，需要cc线通信）只支持该协议。手里有几个小米的18w快充头，作为研究对象。 理论QC快充协议介绍QC快充是高通搞出来的，为了让设备充电更快。这里没找到官方文档，只看到一些快充芯片的手册，就简单说一下">
+<meta name="keywords" content="STM32,QC快充欺骗">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安卓通用刷机流程">
-<meta property="og:url" content="http://xq1309583.github.io/2019/08/15/安卓通用刷机流程/index.html">
+<meta property="og:title" content="基于STM32的QC快充欺骗">
+<meta property="og:url" content="http://xq1309583.github.io/2019/08/15/基于STM32的QC快充欺骗/index.html">
 <meta property="og:site_name" content="Qing">
-<meta property="og:description" content="解锁Bootloader ​        现代的智能手机具备操作系统，系统在启动之前需要通过bootloader启动，手机启动的时候基带执行初始化，然后引导系统内核，直到系统启动。智能手机生产厂商通常在出厂时锁定了手机的bootloader，以防止用户误操作损坏了系统文件造成手机功能异常，部分厂商会给开发者或普通用户发放bootloader解锁码，这通常需要步骤众多的申请，锁定bootloade">
+<meta property="og:description" content="刚换博客，还没找好图床，图以后再补 现在的手机充电头大部分都支持QC快充协议和PD协议，由于PD协议涉及充电器和设备通信，暂不讨论，这里只讨论QC快充协议，而且大部分快充头（PD必须是type-c接口，需要cc线通信）只支持该协议。手里有几个小米的18w快充头，作为研究对象。 理论QC快充协议介绍QC快充是高通搞出来的，为了让设备充电更快。这里没找到官方文档，只看到一些快充芯片的手册，就简单说一下">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-29T02:58:23.224Z">
+<meta property="og:updated_time" content="2019-08-30T06:57:59.160Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安卓通用刷机流程">
-<meta name="twitter:description" content="解锁Bootloader ​        现代的智能手机具备操作系统，系统在启动之前需要通过bootloader启动，手机启动的时候基带执行初始化，然后引导系统内核，直到系统启动。智能手机生产厂商通常在出厂时锁定了手机的bootloader，以防止用户误操作损坏了系统文件造成手机功能异常，部分厂商会给开发者或普通用户发放bootloader解锁码，这通常需要步骤众多的申请，锁定bootloade">
-  <link rel="canonical" href="http://xq1309583.github.io/2019/08/15/安卓通用刷机流程/">
+<meta name="twitter:title" content="基于STM32的QC快充欺骗">
+<meta name="twitter:description" content="刚换博客，还没找好图床，图以后再补 现在的手机充电头大部分都支持QC快充协议和PD协议，由于PD协议涉及充电器和设备通信，暂不讨论，这里只讨论QC快充协议，而且大部分快充头（PD必须是type-c接口，需要cc线通信）只支持该协议。手里有几个小米的18w快充头，作为研究对象。 理论QC快充协议介绍QC快充是高通搞出来的，为了让设备充电更快。这里没找到官方文档，只看到一些快充芯片的手册，就简单说一下">
+  <link rel="canonical" href="http://xq1309583.github.io/2019/08/15/基于STM32的QC快充欺骗/">
 
 
 <script id="page.configurations">
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title>安卓通用刷机流程 | Qing</title>
+  <title>基于STM32的QC快充欺骗 | Qing</title>
   
 
 
@@ -241,7 +241,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xq1309583.github.io/2019/08/15/安卓通用刷机流程/">
+    <link itemprop="mainEntityOfPage" href="http://xq1309583.github.io/2019/08/15/基于STM32的QC快充欺骗/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="罗晰青Amethyst">
@@ -255,7 +255,7 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">安卓通用刷机流程
+          <h1 class="post-title" itemprop="name headline">基于STM32的QC快充欺骗
 
               
             
@@ -288,7 +288,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-29 10:58:23" itemprop="dateModified" datetime="2019-08-29T10:58:23+08:00">2019-08-29</time>
+                <time title="修改时间：2019-08-30 14:57:59" itemprop="dateModified" datetime="2019-08-30T14:57:59+08:00">2019-08-30</time>
               </span>
             
           
@@ -319,16 +319,49 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="解锁Bootloader"><a href="#解锁Bootloader" class="headerlink" title="解锁Bootloader"></a>解锁Bootloader</h1><blockquote>
-<p>​        现代的智能手机具备操作系统，系统在启动之前需要通过bootloader启动，手机启动的时候基带执行初始化，然后引导系统内核，直到系统启动。智能手机生产厂商通常在出厂时锁定了手机的bootloader，以防止用户误操作损坏了系统文件造成手机功能异常，部分厂商会给开发者或普通用户发放bootloader解锁码，这通常需要步骤众多的申请，锁定bootloader能部分有效阻止恶意程序对手机造成的破坏，部分用户或开发者会通过解锁bootloader以获得更多的功能和权限，这通常会带来使用风险。</p>
-</blockquote>
-<p>一般可在手机官网申请解锁，或从相关论坛找到解锁工具。</p>
-<h1 id="（推荐，可选）刷第三方Recovery"><a href="#（推荐，可选）刷第三方Recovery" class="headerlink" title="（推荐，可选）刷第三方Recovery"></a>（推荐，可选）刷第三方Recovery</h1><p>Recovery的作用方便直接从内部刷写固件和防止固件损坏造成无法使用的情况。当然rec可以做的使用ADB命令也可以做，但是使用rec会非常方便。目前用的比较多的第三方rec是<a href="https://twrp.me/Devices/" target="_blank" rel="noopener">TWRP</a>。</p>
-<h1 id="刷ROM"><a href="#刷ROM" class="headerlink" title="刷ROM"></a>刷ROM</h1><p>我用的比较多的是<a href="https://download.lineageos.org/" target="_blank" rel="noopener">LineageOS</a>和<a href="https://downloads.aospextended.com/" target="_blank" rel="noopener">AEX</a>。</p>
-<h1 id="（可选）获取ROOT权限"><a href="#（可选）获取ROOT权限" class="headerlink" title="（可选）获取ROOT权限"></a>（可选）获取ROOT权限</h1><blockquote>
-<p>Root是Android系统的一个术语，它使得用户可以获取Android操作系统的超级用户权限。Root能够帮助用户越过手机制造商的限制，得以卸载本身预装的程序，或运行需要系统权限的动作。Android系统的Root与苹果iOS系统的越狱类似。</p>
-</blockquote>
-<p>ROOT权限得到获取一般可通过下载ROM的网站提供的ROOT方法或刷入Magisk或者从相关论坛寻找。传统的ROOT方法一般使用SuperSU作为ROOT权限的管理软件。最新的是通过刷Magisk获取ROOT权限。相比传统ROOT，Magisk可以隐藏ROOT权限，同时提供类似Xposed框架的功能。</p>
+        <p><code>刚换博客，还没找好图床，图以后再补</code></p>
+<p>现在的手机充电头大部分都支持QC快充协议和PD协议，由于PD协议涉及充电器和设备通信，暂不讨论，这里只讨论QC快充协议，而且大部分快充头（PD必须是type-c接口，需要cc线通信）只支持该协议。手里有几个小米的18w快充头，作为研究对象。</p>
+<h1 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h1><h2 id="QC快充协议介绍"><a href="#QC快充协议介绍" class="headerlink" title="QC快充协议介绍"></a>QC快充协议介绍</h2><p>QC快充是高通搞出来的，为了让设备充电更快。这里没找到官方文档，只看到一些快充芯片的手册，就简单说一下。目前有4个版本，其中最后一个版本是和PD统一了协议，也就是以后快充只有PD这个协议的，但是目前仍然兼容旧版本。手头这个充电器写着支持5v，9v，12v输出，就按2.0协议处理。通过查资料发现，实现改变充电电压的原理是在USB的两根数据线上加不同的电压来完成。</p>
+<p>USB2有四根线，一根VCC一根GND，还有两根数据线。平时VCC输出5v，数据线用来传数据。在快充得到时候这两根数据线用作改变充电电压。</p>
+<table>
+<thead>
+<tr>
+<th>D+（V）</th>
+<th>D-（V）</th>
+<th>输出（V）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3.3</td>
+<td>3.3</td>
+<td>20</td>
+</tr>
+<tr>
+<td>0.6</td>
+<td>0.6</td>
+<td>12</td>
+</tr>
+<tr>
+<td>3.3</td>
+<td>0.6</td>
+<td>9</td>
+</tr>
+<tr>
+<td>0.6</td>
+<td>3.3</td>
+<td>连续模式</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>默认（5V）</td>
+</tr>
+</tbody></table>
+<h2 id="为什么使用STM32"><a href="#为什么使用STM32" class="headerlink" title="为什么使用STM32"></a>为什么使用STM32</h2><p><del>手头有一块空闲的f103c8t6……</del>可以方便的输出我想要的电压，同时也可以为以后研究PD协议提供方便。</p>
+<p>由于输出固定电压需要DAC，这块芯片没有集成，所以自己造一个RC滤波器当DA用。为什么不买一个DAC芯片？因为做的板子面积小没多余的地方<del>和没钱</del>。由于这个芯片要稳定的3.3v供电，输出的电压在不停的变化，所以再加一个宽电压的直流稳压芯片当电源。所以整体的设计方案就出来了，电源（稳压芯片），主控（c8t6），DAC（RC滤波电路），输出电压操作（DIP开关）。</p>
+<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><h2 id="DAC制作"><a href="#DAC制作" class="headerlink" title="DAC制作"></a>DAC制作</h2><p>这里用了一个二阶的RC滤波电路（一阶的效果不好，高阶的做起来太复杂），因为有两根数据线，就要做两个滤波器。输入接在单片机的PWM输出，输出接在整个系统的输入。</p>
+<h2 id="其他电路制作"><a href="#其他电路制作" class="headerlink" title="其他电路制作"></a>其他电路制作</h2><p>用单片机肯定少不了最小系统，晶振，RESET……就不多说了。需要两个USB接口，作为系统的输入和输出。拨码开关要两个就可以组成四种状态，对应四个电压（5，9，12，20）。直流稳压芯片，作为单片机电源。再预留一个调试和烧写接口，整体就完成了。</p>
+<h2 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h2><p>DAC通过PWM过滤波器实现，单片机又可以直接产生PWM，直接用就行。通过检测DIP开关状态来输出不同频率的PWM波实现可调电压输出。这里用TIM3的两个通道，对应PA6和PA7管脚。拨码开关接单片机和地，单片机对应端口设成上拉输入。</p>
 
     </div>
 
@@ -340,15 +373,15 @@
           
         
         <div class="post-tags">
-            <a href="/tags/安卓/" rel="tag"><i class="fa fa-tag"></i> 安卓</a>
+            <a href="/tags/STM32/" rel="tag"><i class="fa fa-tag"></i> STM32</a>
           
-            <a href="/tags/刷机/" rel="tag"><i class="fa fa-tag"></i> 刷机</a>
+            <a href="/tags/QC快充欺骗/" rel="tag"><i class="fa fa-tag"></i> QC快充欺骗</a>
           
         </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-              <a href="/2019/08/15/NEXT主题踩过的坑/" rel="next" title="NEXT主题踩过的坑">
-                <i class="fa fa-chevron-left"></i> NEXT主题踩过的坑
+              <a href="/2019/01/01/安卓通用刷机流程/" rel="next" title="安卓通用刷机流程">
+                <i class="fa fa-chevron-left"></i> 安卓通用刷机流程
               </a>
             
           </div>
@@ -356,8 +389,8 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-              <a href="/2019/08/15/GITHUB+HEXO+NEXT搭建博客/" rel="prev" title="GITHUB+HEXO+NEXT搭建博客">
-                GITHUB+HEXO+NEXT搭建博客 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/15/NEXT主题踩过的坑/" rel="prev" title="NEXT主题踩过的坑">
+                NEXT主题踩过的坑 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -414,7 +447,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -454,7 +487,11 @@
         
           
         
-        <span class="site-state-item-count">4</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -515,7 +552,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#解锁Bootloader"><span class="nav-number">1.</span> <span class="nav-text">解锁Bootloader</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#（推荐，可选）刷第三方Recovery"><span class="nav-number">2.</span> <span class="nav-text">（推荐，可选）刷第三方Recovery</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#刷ROM"><span class="nav-number">3.</span> <span class="nav-text">刷ROM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#（可选）获取ROOT权限"><span class="nav-number">4.</span> <span class="nav-text">（可选）获取ROOT权限</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#理论"><span class="nav-number">1.</span> <span class="nav-text">理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#QC快充协议介绍"><span class="nav-number">1.1.</span> <span class="nav-text">QC快充协议介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么使用STM32"><span class="nav-number">1.2.</span> <span class="nav-text">为什么使用STM32</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实践"><span class="nav-number">2.</span> <span class="nav-text">实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DAC制作"><span class="nav-number">2.1.</span> <span class="nav-text">DAC制作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他电路制作"><span class="nav-number">2.2.</span> <span class="nav-text">其他电路制作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序编写"><span class="nav-number">2.3.</span> <span class="nav-text">程序编写</span></a></li></ol></li></ol></div>
             
 
           </div>
