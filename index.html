@@ -467,7 +467,7 @@ AD，ADS，SolidWorks等等……去里面搜吧
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xq1309583.github.io/2019/08/15/GUET校园网登陆/">
+    <link itemprop="mainEntityOfPage" href="http://xq1309583.github.io/2019/09/10/使用STM32F103驱动MSP430F5529PocketKit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="罗晰青Amethyst">
@@ -484,7 +484,7 @@ AD，ADS，SolidWorks等等……去里面搜吧
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/08/15/GUET校园网登陆/" class="post-title-link" itemprop="url">GUET校园网登陆（DRCOM）</a>
+                <a href="/2019/09/10/使用STM32F103驱动MSP430F5529PocketKit/" class="post-title-link" itemprop="url">使用STM32F103驱动MSP430F5529PocketKit</a>
               
             
           </h1>
@@ -503,7 +503,7 @@ AD，ADS，SolidWorks等等……去里面搜吧
                 
               
 
-              <time title="创建时间：2019-08-15 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-15T00:00:00+08:00">2019-08-15</time>
+              <time title="创建时间：2019-09-10 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-10T00:00:00+08:00">2019-09-10</time>
             </span>
           
             
@@ -516,7 +516,7 @@ AD，ADS，SolidWorks等等……去里面搜吧
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-12 16:36:43" itemprop="dateModified" datetime="2019-09-12T16:36:43+08:00">2019-09-12</time>
+                <time title="修改时间：2019-09-22 20:08:27" itemprop="dateModified" datetime="2019-09-22T20:08:27+08:00">2019-09-22</time>
               </span>
             
           
@@ -549,15 +549,15 @@ AD，ADS，SolidWorks等等……去里面搜吧
       
           
             <p>
-              新搞得博客，图床还没找好，以后再放图
-出校器学校更新了网络认证方式，网速变慢，延迟变高，尤其是中午晚上用网高峰期。以前的脚本不好使了，但是现在登陆更简单了。认证抓取的数据如下。
-http://10.32.254.11/drcom/login?callback=dr1563875918914&amp;
+              项目地址：https://github.com/xq1309583/MSP430F5529PocketKit-for-STM32
+基本整合了那块小板子上芯片的驱动。包括DAC7571（DAC），DRV8837（电机驱动），EINK（电子墨水屏），INA210（电流测试），TMP421（温度测试）。
+
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/08/15/GUET校园网登陆/#more" rel="contents">
+              <a class="btn" href="/2019/09/10/使用STM32F103驱动MSP430F5529PocketKit/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -588,7 +588,7 @@ http://10.32.254.11/drcom/login?callback=dr1563875918914&amp;
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xq1309583.github.io/2019/08/15/KEIL5新建STM32工程/">
+    <link itemprop="mainEntityOfPage" href="http://xq1309583.github.io/2019/08/15/Mifare S70卡安全测试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="罗晰青Amethyst">
@@ -605,7 +605,7 @@ http://10.32.254.11/drcom/login?callback=dr1563875918914&amp;
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/08/15/KEIL5新建STM32工程/" class="post-title-link" itemprop="url">KEIL5新建STM32工程</a>
+                <a href="/2019/08/15/Mifare S70卡安全测试/" class="post-title-link" itemprop="url">Mifare S70卡安全测试</a>
               
             
           </h1>
@@ -637,7 +637,7 @@ http://10.32.254.11/drcom/login?callback=dr1563875918914&amp;
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-12 16:36:59" itemprop="dateModified" datetime="2019-09-12T16:36:59+08:00">2019-09-12</time>
+                <time title="修改时间：2019-09-12 16:37:21" itemprop="dateModified" datetime="2019-09-12T16:37:21+08:00">2019-09-12</time>
               </span>
             
           
@@ -670,17 +670,14 @@ http://10.32.254.11/drcom/login?callback=dr1563875918914&amp;
       
           
             <p>
-              我是懒人，我要直接下载正点原子的工程模板，或直接下载我建好的模板（适用于STM32F103C8T6）
-这里介绍库函数版本，以f103c8举例。
-新建工程菜单Project–New uVision Project
-新建一个MyProject文件夹，放在这文件夹里面，取个名字叫MyProject。
-然后
+              理论本人手里恰好有一张Mifare S70卡，作为测试用。
+Mifare S70卡阅读手册可知该卡可存储4K的数据，共40个扇区。扇区结构基本上相同。由于这里只用到了前16个扇区，其他扇区不做深究。这几个扇区每个扇区分为4个块，每个块可存储16字节数据。其中0扇区（第一个扇区）的第0块（第一个块）为
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/08/15/KEIL5新建STM32工程/#more" rel="contents">
+              <a class="btn" href="/2019/08/15/Mifare S70卡安全测试/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -711,7 +708,7 @@ http://10.32.254.11/drcom/login?callback=dr1563875918914&amp;
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xq1309583.github.io/2019/08/15/GITHUB+HEXO+NEXT搭建博客/">
+    <link itemprop="mainEntityOfPage" href="http://xq1309583.github.io/2019/08/15/Microsoft Edge浏览器收藏夹同步/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="罗晰青Amethyst">
@@ -728,7 +725,7 @@ http://10.32.254.11/drcom/login?callback=dr1563875918914&amp;
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/08/15/GITHUB+HEXO+NEXT搭建博客/" class="post-title-link" itemprop="url">GITHUB+HEXO+NEXT搭建博客</a>
+                <a href="/2019/08/15/Microsoft Edge浏览器收藏夹同步/" class="post-title-link" itemprop="url">Microsoft Edge浏览器收藏夹同步</a>
               
             
           </h1>
@@ -760,7 +757,7 @@ http://10.32.254.11/drcom/login?callback=dr1563875918914&amp;
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-12 16:36:34" itemprop="dateModified" datetime="2019-09-12T16:36:34+08:00">2019-09-12</time>
+                <time title="修改时间：2019-09-12 16:37:12" itemprop="dateModified" datetime="2019-09-12T16:37:12+08:00">2019-09-12</time>
               </span>
             
           
@@ -793,13 +790,14 @@ http://10.32.254.11/drcom/login?callback=dr1563875918914&amp;
       
           
             <p>
-              注册GITHUB账号并创建Web Pages进入GITHUB官网注册账号，并使用yourname.github.io为名字新建一个仓库。建好仓库后设置该仓库，在options项下面有个github pages，source选择master branch，主题随便选一个，选了主题之后会自动保存。现在可
+              我一直用的谷歌浏览器，电脑的收藏夹咔一下就可以同步，但是手机的咔一下不行，还要谷歌全家桶才能开启同步功能。安卓的Edge浏览器虽然早就用上了谷歌内核，但是经常卡死（Miui Android9）。现在电脑的Edge也要用上谷歌内核了，手机浏览器八成也有救了。
+都装上先同步一下收藏夹试试，发现同步的是一
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/08/15/GITHUB+HEXO+NEXT搭建博客/#more" rel="contents">
+              <a class="btn" href="/2019/08/15/Microsoft Edge浏览器收藏夹同步/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -827,7 +825,7 @@ http://10.32.254.11/drcom/login?callback=dr1563875918914&amp;
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -863,7 +861,7 @@ http://10.32.254.11/drcom/login?callback=dr1563875918914&amp;
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -927,7 +925,9 @@ http://10.32.254.11/drcom/login?callback=dr1563875918914&amp;
         
           
         
-        <span class="site-state-item-count">14</span>
+          
+        
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
